@@ -46,7 +46,7 @@ export async function updateInvoice(id: string, fromData: FormData) {
     });
 
     const amountInCents = amount * 100; // Convert to cents
-    const date = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
+    // const date = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
     await sql`
         UPDATE invoices
         SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
